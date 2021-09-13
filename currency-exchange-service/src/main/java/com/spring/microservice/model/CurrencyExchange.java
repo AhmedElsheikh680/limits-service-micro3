@@ -1,13 +1,23 @@
 package com.spring.microservice.model;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Entity
+@Table(name = "currency_exchange")
 public class CurrencyExchange {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+    @Column(name = "currency_from")
     private String from;
+    @Column(name = "currency_to")
     private String to;
+    @Column(name = "conversion_multiple")
     private BigDecimal conversionMultiple;
+    @Column(name = "environment")
     private String environment;
 
     public CurrencyExchange() {
