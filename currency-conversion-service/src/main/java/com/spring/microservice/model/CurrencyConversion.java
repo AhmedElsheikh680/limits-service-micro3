@@ -4,10 +4,11 @@ import java.math.BigDecimal;
 
 public class CurrencyConversion {
 
+
     private Long id;
     private String from;
     private String to;
-    private String quantity;
+    private BigDecimal quantity;
     private BigDecimal conversionMultiple;
     private BigDecimal totlaCalculatedAmount;
     private String environment;
@@ -15,7 +16,7 @@ public class CurrencyConversion {
     public CurrencyConversion() {
     }
 
-    public CurrencyConversion(Long id, String from, String to, String quantity, BigDecimal conversionMultiple, BigDecimal totlaCalculatedAmount, String environment) {
+    public CurrencyConversion(Long id, String from, String to, BigDecimal quantity, BigDecimal conversionMultiple, BigDecimal totlaCalculatedAmount, String environment) {
         this.id = id;
         this.from = from;
         this.to = to;
@@ -49,11 +50,11 @@ public class CurrencyConversion {
         this.to = to;
     }
 
-    public String getQuantity() {
+    public BigDecimal getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(BigDecimal quantity) {
         this.quantity = quantity;
     }
 
