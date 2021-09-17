@@ -1,0 +1,28 @@
+currency_exchange
+// http://localhost:8000/currency-exchange/from/USD/to/INR
+
+
+currency_conversion
+// http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/10
+// http://localhost:8100/currency-conversion-feign/from/USD/to/INR/quantity/10
+
+eureka
+// http://localhost:8761/
+
+api-gateway
+app.properties
+spring.cloud.gateway.discovery.locator.enabled=true
+// http://localhost:8765/CURRENCY-EXCHANGE/currency-exchange/from/USD/to/INR  (CURRENCY_EXCHANGE)
+// http://localhost:8765/CURRENCY-CONVERSION/currency-conversion/from/USD/to/INR/quantity/10
+// http://localhost:8765/CURRENCY-CONVERSION/currency-conversion-feign/from/USD/to/INR/quantity/10
+
+spring.cloud.gateway.discovery.locator.lowerCaseServiceId=true
+// http://localhost:8765/currency-exchange/currency-exchange/from/USD/to/INR  (CURRENCY_EXCHANGE)
+// http://localhost:8765/currency-conversion/currency-conversion/from/USD/to/INR/quantity/10
+// http://localhost:8765/currency-conversion/currency-conversion-feign/from/USD/to/INR/quantity/10
+
+
+custom routes
+// http://localhost:8765/currency-exchange/from/USD/to/INR  (CURRENCY_EXCHANGE)
+// http://localhost:8765/currency-conversion/from/USD/to/INR/quantity/10
+// http://localhost:8765/currency-conversion-feign/from/USD/to/INR/quantity/10
