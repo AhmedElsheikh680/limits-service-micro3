@@ -20,6 +20,7 @@ public class CurrencyExchangeController {
     @Autowired
     private Environment environment;
 
+    //http://localhost:8000/currency-exchange/from/USD/to/INR
     @GetMapping("/currency-exchange/from/{from}/to/{to}")
     public CurrencyExchange retrieveExchangeValue(@PathVariable String from, @PathVariable String to){
 //          CurrencyExchange currencyExchange = new CurrencyExchange(1001L, "USD", "INR", BigDecimal.valueOf(50));
