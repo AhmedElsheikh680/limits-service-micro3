@@ -43,7 +43,6 @@ public class APiGatewayConfiguration {
                 .build();
 
 
-
 //        Function<PredicateSpec, Buildable<Route>> routeFunction
 //                = p -> p.path("/get")
 //                .filters(f -> f.addRequestHeader("MyHeader", "MyURI")
