@@ -12,7 +12,6 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class CircuitBreakerController {
 
-
     private Logger logger = LoggerFactory.getLogger(CircuitBreakerController.class);
 
     @GetMapping("/sample-api")
