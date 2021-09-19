@@ -1,6 +1,8 @@
 package com.spring.microservice.Controller;
 
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,11 +18,15 @@ public class CircuitBreakerController {
     @GetMapping("/sample-api")
     @CircuitBreaker(name = "sample-api", fallbackMethod="hardcodedResponse")
 //    @Retry(name = "sample-api", fallbackMethod = "hardcodedResponse")
+//    @RateLimiter(name = "default")
+    @Bulkhead(name = "sample-api")
+    // 10s => 1000 calls to simple api
     public String sampleApi(){
         logger.info("Sample Api Call Receive");
-        ResponseEntity<String> responseEntity =
-                new RestTemplate().getForEntity("http://localhost:8080/some-dummy-url", String.class);
-        return responseEntity.getBody();
+//        ResponseEntity<String> responseEntity =
+//                new RestTemplate().getForEntity("http://localhost:8080/some-dummy-url", String.class);
+//        return responseEntity.getBody();
+        return "sample-api";
     }
     public String hardcodedResponse(Exception e){
         return "fallback - response";
